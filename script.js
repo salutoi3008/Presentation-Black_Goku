@@ -182,4 +182,31 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+
+  // Modale vidéo
+const videoModal = document.getElementById('videoModal');
+const videoModalIframe = document.getElementById('videoModalIframe');
+const videoModalClose = document.getElementById('videoModalClose');
+
+function getYoutubeId(url) {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?]+)/);
+  return match ? match[1] : url;
+}
+
+document.querySelectorAll('.video-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = getYoutubeId(btn.dataset.yt);
+    videoModalIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+    videoModal.classList.add('is-open');
+  });
+});
+
+function closeVideoModal(){
+  videoModal.classList.remove('is-open');
+  videoModalIframe.src = '';
+}
+videoModalClose.addEventListener('click', closeVideoModal);
+videoModal.addEventListener('click', e => {
+  if (e.target === videoModal || e.target.classList.contains('video-modal__backdrop')) closeVideoModal();
+});
   
