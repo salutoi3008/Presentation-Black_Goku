@@ -167,8 +167,8 @@
   }
 
 
-  /* Image illustrative dans une section card (ex: Zamasu) */
-  .zamasu-img{
+  /* Image illustrative dans une section card (ex: Zamasu, Goku vs Hit) */
+  .zamasu-img, .gokuvshit{
     display:block;
     max-width:280px;
     width:100%;
@@ -541,3 +541,58 @@
     .hero__bg{ opacity:.6 }
   }
   
+
+/* ===================== IMAGES STORY (Black Goku) ===================== */
+
+/* Figure conteneur centré */
+.story-figure {
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Image standard — mêmes dimensions que les originales */
+.story-img {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 12px auto;
+  border-radius: 12px;
+  /* Renforcement de contours (même effet que la bannière) */
+  filter: contrast(1.08) drop-shadow(0 4px 18px rgba(0,0,0,.45));
+  transition: filter .25s ease, transform .25s ease;
+}
+
+.story-img:hover {
+  filter: contrast(1.12) drop-shadow(0 6px 24px rgba(93,211,255,.35));
+  transform: scale(1.015);
+}
+
+/* Variante large — mêmes dimensions que les originales */
+.story-figure--wide { max-width: 100% }
+
+.story-img--wide {
+  max-width: 280px;
+}
+
+/* Légende sous chaque image */
+.pill-list-caption {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+}
+
+/* Anciennes classes maintenues pour compatibilité */
+.zamasu-img,
+.gokuvshit {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 12px auto;
+  border-radius: 12px;
+  filter: contrast(1.08) drop-shadow(0 4px 18px rgba(0,0,0,.45));
+}
