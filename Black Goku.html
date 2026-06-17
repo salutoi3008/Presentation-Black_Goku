@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Présentation moderne de l’Arduino : modèles, spécifications, entrées/sorties, usages et ressources.">
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+
+
+ <title>Black Goku -- Présentation et Histoire</title>
+ </head>
+ <body>
+  
+     <div class="banniere">
+ <img src="img/bannière.jpg" alt="Bannière">
+ <button id="themeToggle" aria-label="Changer de thème">🌙</button>
+     </div>
+
+
+ <header class="hero">
+     <div class="hero__bg" aria-hidden="true"></div>
+
+
+     <div class="container hero__content">
+   <p>Apparu pour la première fois le <strong> 12 Juin 2016 </strong>, Black Goku est devenu l'un des personnages les plus appréciés de la communauté.</p>
+   <p>Retournons 10 ans en arrière pour comprendre qui est ce dieux qui a bien faillit triompher de nos héros et appliquer son plan <strong> Zéros Mortel</strong>.</p>
+     </div>
+
+</header>
+      <nav class="hero__cta">
+        <a href="#histoire" class="btn btn--ghost">Histoire</a>
+        <a href="#transformation" class="btn btn--ghost">Transformations</a>
+        <a href="#techniques" class="btn btn--ghost">Techniques</a>
+        <a href="#aparition" class="btn btn--ghost">Apparitions</a>
+      </nav>
+     </div>
+  </header>
+
+
+
+  <main class="container">
+   <section class="intro card" id="histoire">
+   <h2>Qui est-il réellement ?</h2>
+   <h4><em> Origine : </em></h4>
+
+       <p>
+       Black Goku n'est pas un simple Son Goku qui aurait mal tourné : Il s'agit d'en réalité de <strong>Zamasu</strong>, 
+       un apprenti kaioshin de l'univers 10 qui dans la timeline principale a volé le corps de Goku grâce  <strong>aux Super Dragon Ball </strong> atteindre son but qui est de posséder un pouvoir suprême afin d'exterminer tous les êtres mortels et inférieur à lui. Voila ce qu'est son plan <strong><em>Zéro Mortel</em></strong> .
+       </p>
+
+   <img src="img/zamasu.jpg" alt="Zamasu" class="zamasu-img">
+   <ul class="pill-list">
+       <li>Zamasu lors de son introduction</li>
+   </ul>
+
+       <p> 
+        Zamasu est l'assistant de Gowasu, le kaioshin de l'univers 10. Il est doté d'un immense talent et d'une intelligence redoutale,
+        il est promis à un grand avenir au sein de la hiérarchie divine. 
+       </p>
+   <img src="img/gowasu et zamasu.jpg" alt="Gowasu et Zamasu" class="gowasu et zamasu-img">
+   <ul class="pill-list">    
+       <li> Gowasu et Zamasu -- Le maître et l'apprenti</li>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section id="modeles">
+      <h2>Modèles courants</h2>
+      <div class="grid cards">
+        <article class="card">
+          <div class="card__img"><img src="img/uno.png" alt="Arduino Uno"></div>
+          <h3>Arduino Uno</h3>
+          <p>Le plus répandu, idéal pour l’apprentissage et les petits projets.</p>
+          <ul class="spec-tags">
+            <li>ATmega328P</li><li>14 entrées/sorties digitales</li><li>6 entrées analogiques</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card__img"><img src="img/mega.png" alt="Arduino Mega 2560"></div>
+          <h3>Arduino Mega 2560</h3>
+          <p>Plus de mémoire et de broches, parfait pour les projets complexes.</p>
+          <ul class="spec-tags">
+            <li>ATmega2560</li><li>54 entrées/sorties digitales</li><li>16 entrées analogiques</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card__img"><img src="img/nano.png" alt="Arduino Nano"></div>
+          <h3>Arduino Nano</h3>
+          <p>Format compact, facile à intégrer dans de petits circuits.</p>
+          <ul class="spec-tags">
+            <li>ATmega328</li><li>22 entrées/sorties</li><li>USB Mini-B</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card__img"><img src="img/leonardo.png" alt="Arduino Leonardo"></div>
+          <h3>Arduino Leonardo</h3>
+          <p>Particularité : peut émuler un clavier ou une souris.</p>
+          <ul class="spec-tags">
+            <li>ATmega32u4</li><li>20 entrées/sorties digitales</li><li>USB natif</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="io" class="card">
+      <h2>Schéma simplifié des broches I/O</h2>
+      <p class="muted">Plan logique. Vérifiez toujours la datasheet avant tout branchement réel.</p>
+      <figure class="gpio-figure">
+        <img src="img/arduino-uno-pinout.png" alt="Schéma des broches de l’Arduino Uno" class="gpio-img">
+      </figure>
+    </section>
+
+    <section id="specs">
+      <h2>Spécifications (aperçu)</h2>
+      <div class="table-scroll">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Modèle</th><th>Microcontrôleur</th><th>Fréquence</th><th>RAM</th><th>Flash</th><th>Entrées/Sorties</th><th>Alim</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Uno</td><td>ATmega328P</td><td>16 MHz</td><td>2 Ko</td><td>32 Ko</td><td>14 DIO / 6 AIO</td><td>USB, Jack 7–12V</td>
+            </tr>
+            <tr>
+              <td>Mega 2560</td><td>ATmega2560</td><td>16 MHz</td><td>8 Ko</td><td>256 Ko</td><td>54 DIO / 16 AIO</td><td>USB, Jack 7–12V</td>
+            </tr>
+            <tr>
+              <td>Nano</td><td>ATmega328</td><td>16 MHz</td><td>2 Ko</td><td>32 Ko</td><td>22 I/O</td><td>USB Mini-B</td>
+            </tr>
+            <tr>
+              <td>Leonardo</td><td>ATmega32u4</td><td>16 MHz</td><td>2.5 Ko</td><td>32 Ko</td><td>20 I/O</td><td>USB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Exemples d’usages</h2>
+      <div class="grid gallery">
+        <figure class="card media">
+          <div class="media__ph"><img src="img/domotique.png" alt="Domotique" class="media__overlay"></div>
+          <figcaption>Domotique (contrôle de relais, capteurs de température)</figcaption>
+        </figure>
+        <figure class="card media">
+          <div class="media__ph"><img src="img/robot.png" alt="Robotique" class="media__overlay"></div>
+          <figcaption>Robotique (moteurs, capteurs ultrasons)</figcaption>
+        </figure>
+        <figure class="card media">
+          <div class="media__ph"><img src="img/prototypage.png" alt="Prototypage" class="media__overlay"></div>
+          <figcaption>Prototypage rapide (breadboard + composants)</figcaption>
+        </figure>
+        <figure class="card media">
+          <div class="media__ph"><img src="img/iot.png" alt="IoT" class="media__overlay"></div>
+          <figcaption>IoT (modules Wi-Fi/Bluetooth pour objets connectés)</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" aria-label="Revenir en haut" title="Retour en haut">▲</button>
+
+  <footer class="site-footer">
+    <div class="container"><p>Made with ♥</p></div>
+  </footer>
+</body>
+</html>
