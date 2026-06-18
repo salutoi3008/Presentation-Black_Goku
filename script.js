@@ -77,4 +77,27 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('scroll', checkFadeIn);
   // Première vérification au chargement
   setTimeout(checkFadeIn, 300);
+
+// === Bouton Voix ===
+const voiceBtn = document.getElementById('voiceBtn');
+const voiceAudio = document.getElementById('voiceAudio');
+
+if (voiceBtn && voiceAudio) {
+  voiceBtn.addEventListener('click', () => {
+    if (voiceAudio.paused) {
+      voiceAudio.currentTime = 0;
+      voiceAudio.play();
+      voiceBtn.textContent = '⏹ Stopper';
+    } else {
+      voiceAudio.pause();
+      voiceAudio.currentTime = 0;
+      voiceBtn.textContent = '🔊 Voix de Goku Black';
+    }
+  });
+
+  voiceAudio.addEventListener('ended', () => {
+    voiceBtn.textContent = '🔊 Voix de Goku Black';
+  });
+}
+
 });
