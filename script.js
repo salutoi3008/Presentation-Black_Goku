@@ -25,41 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
   
-  
-  const students = [
-    {
-        name: "Sung Jin-Woo",
-        photo: "img/jinwoo.png",
-        role: "Chasseur de rang S, ombre et chef des Shadow Soldiers",
-        email: "sung.jinwoo@huntersguild.com",
-        github: "https://github.com/GitEnMain",
-        web: "https://fr.wikipedia.org/wiki/Solo_Leveling",
-        tech: ["Invocation d'ombres", "Combat rapproché", "Leadership"],
-        bio: "De faible chasseur E à monarque surpuissant, il incarne l’ascension ultime."
-      },
-      {
-        name: "Taro Sakamoto",
-        photo: "img/sakamoto.png",
-        role: "Ancien tueur à gages légendaire devenu épicier de quartier",
-        email: "taro.sakamoto@sakamotoshop.com",
-        github: "https://github.com/GitEnMain",
-        web: "https://fr.wikipedia.org/wiki/Sakamoto_Days",
-        tech: ["Arts martiaux", "Armes improvisées", "Discrétion absolue"],
-        bio: "Paisible père de famille... sauf quand sa boutique ou ses proches sont menacés."
-      },      
-      {
-        name: "Donnie Thornberry",
-        photo: "img/donnie.png",
-        role: "Enfant sauvage adopté par les Delajungle",
-        email: "donnie@cocotier.com",
-        github: "https://github.com/GitEnMain",
-        web: "pages/Arduino/arduino.html",
-        tech: ["Agilité jungle", "Énergie infinie", "JavaScript"],
-        bio: "Un mélange unique de cris, d’énergie et d’instinct animal."
-      },      
-  ];
-  
-  
   const $ = (sel, root=document) => root.querySelector(sel);
   const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
   const sanitize = (s='') => String(s).replace(/[<>]/g, ch => ({'<':'&lt;','>':'&gt;'}[ch]));
@@ -196,7 +161,7 @@ function getYoutubeId(url) {
 document.querySelectorAll('.video-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const id = getYoutubeId(btn.dataset.yt);
-    videoModalIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+    videoModalIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&vq=hd1080`;
     videoModal.classList.add('is-open');
   });
 });
@@ -210,3 +175,4 @@ videoModal.addEventListener('click', e => {
   if (e.target === videoModal || e.target.classList.contains('video-modal__backdrop')) closeVideoModal();
 });
   
+
