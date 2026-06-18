@@ -61,4 +61,20 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // === Fade-in au Scroll ===
+  const fadeElements = document.querySelectorAll('.intro.card, #transformation, #techniques');
+
+  function checkFadeIn() {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.85) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkFadeIn);
+  // Première vérification au chargement
+  setTimeout(checkFadeIn, 300);
 });
