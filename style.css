@@ -86,10 +86,8 @@
   /* Bannière responsive mobile */
   @media (max-width: 640px) {
     .banniere {
-      height: 220px;
-    }
-    .banniere video {
-      object-position: center center;
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
   }
 
