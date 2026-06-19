@@ -83,14 +83,6 @@
     color: rgba(255,255,255,1);
   }
 
-  /* Bannière responsive mobile */
-  @media (max-width: 640px) {
-    .banniere {
-      height: auto;
-      aspect-ratio: 16 / 9;
-    }
-  }
-
 
   /* ===================== HERO ===================== */
   .hero{
