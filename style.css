@@ -52,12 +52,12 @@
     height:380px;
     overflow:hidden;
   }
-  .banniere img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center 30%;
-  }
+ .banniere video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
 
   /* ===================== HERO ===================== */
