@@ -18,6 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btn) btn.textContent = mode === "dark" ? "☀️" : "🌙";
   }
 
+  // === Bouton Son Bannière ===
+  const muteToggle = document.getElementById('muteToggle');
+  const banniereVideo = document.getElementById('banniereVideo');
+
+  if (muteToggle && banniereVideo) {
+    muteToggle.addEventListener('click', () => {
+      banniereVideo.muted = !banniereVideo.muted;
+      muteToggle.textContent = banniereVideo.muted ? '🔇' : '🔊';
+    });
+  }
+
   // === Modal Vidéo ===
   const videoModal = document.getElementById('videoModal');
   const videoModalIframe = document.getElementById('videoModalIframe');
@@ -56,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', () => {
       backToTop.classList.toggle('is-visible', window.scrollY > 500);
     });
-
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -75,29 +85,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener('scroll', checkFadeIn);
-  // Première vérification au chargement
   setTimeout(checkFadeIn, 300);
 
-// === Bouton Voix ===
-const voiceBtn = document.getElementById('voiceBtn');
-const voiceAudio = document.getElementById('voiceAudio');
+  // === Bouton Voix ===
+  const voiceBtn = document.getElementById('voiceBtn');
+  const voiceAudio = document.getElementById('voiceAudio');
 
-if (voiceBtn && voiceAudio) {
-  voiceBtn.addEventListener('click', () => {
-    if (voiceAudio.paused) {
-      voiceAudio.currentTime = 0;
-      voiceAudio.play();
-      voiceBtn.textContent = '⏹ Stopper';
-    } else {
-      voiceAudio.pause();
-      voiceAudio.currentTime = 0;
+  if (voiceBtn && voiceAudio) {
+    voiceBtn.addEventListener('click', () => {
+      if (voiceAudio.paused) {
+        // Couper le son de la vidéo bannière avant de jouer le MP3
+        if (banniereVideo) banniereVideo.muted = true;
+        if (muteToggle) muteToggle.textContent = '🔇';
+
+        voiceAudio.currentTime = 0;
+        voiceAudio.play();
+        voiceBtn.textContent = '⏹ Stopper';
+      } else {
+        voiceAudio.pause();
+        voiceAudio.currentTime = 0;
+        voiceBtn.textContent = '🔊 Voix de Goku Black';
+
+        // Remettre le son de la vidéo bannière
+        if (banniereVideo) banniereVideo.muted = false;
+        if (muteToggle) muteToggle.textContent = '🔊';
+      }
+    });
+
+    // Quand le MP3 se termine, remettre le son de la vidéo automatiquement
+    voiceAudio.addEventListener('ended', () => {
       voiceBtn.textContent = '🔊 Voix de Goku Black';
-    }
-  });
-
-  voiceAudio.addEventListener('ended', () => {
-    voiceBtn.textContent = '🔊 Voix de Goku Black';
-  });
-}
+      if (banniereVideo) banniereVideo.muted = false;
+      if (muteToggle) muteToggle.textContent = '🔊';
+    });
+  }
 
 });

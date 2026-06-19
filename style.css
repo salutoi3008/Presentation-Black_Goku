@@ -52,12 +52,36 @@
     height:380px;
     overflow:hidden;
   }
- .banniere video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+  .banniere video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Bouton son bannière */
+  #muteToggle {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.35);
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    backdrop-filter: blur(4px);
+    transition: background .2s ease, color .2s ease;
+    z-index: 10000;
+  }
+  #muteToggle:hover {
+    background: rgba(0,0,0,0.6);
+    color: rgba(255,255,255,1);
+  }
 
 
   /* ===================== HERO ===================== */
